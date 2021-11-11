@@ -1,6 +1,7 @@
 package com.devsuperior.bds04.services;
 
 import javax.persistence.EntityNotFoundException;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -30,7 +31,7 @@ public class EventService {
 	}
 
 	@Transactional
-	public EventDTO insert(EventDTO dto) {
+	public EventDTO insert(@Valid EventDTO dto) {
 		Event entity = new Event();
 		entity.setId(dto.getId());
 		entity.setName(dto.getName());
